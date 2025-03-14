@@ -1,0 +1,158 @@
+
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<style>
+			*{
+				margin:0;
+				padding:0;
+				box-sizing:border-box;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+			body{
+				background-color:lightgray;
+			}
+			.container{
+				width:70%;
+				height:70vh;
+				display:flex;
+				justify-content:center;
+				align-items:center;
+				padding: 20px;
+				border-radius: 10px;
+				margin: auto;
+				background-color: white;
+				margin-top: 10vh;
+				box-shadow: 1px 1px 1px rgb(192, 188, 188);
+				flex-flow:  wrap;
+			}
+			.info{
+				width:70%;
+				height:100%;
+				display:flex;
+				flex-direction:column;
+				justify-content:center;
+				align-items:center;
+				position: relative;
+				top: -150px;
+				
+			}
+			.formul{
+				width:70%;
+				height:70%;
+				display:flex;
+				flex-direction:column;
+				justify-content:center;
+				align-items:center;
+				position: relative;
+				top: -350px;
+				right: -0px;
+			}
+			.btn-submit{
+				width: 100px;
+				height: 35px;
+				border-radius: 5px;
+				color: white;
+				box-shadow: 1px 1px 1px rgb(192, 188, 188);
+				background-color: green;
+				font-size: 17px;
+				position: relative;
+				right: -70px;
+			}
+			.btn-submit:hover{
+				opacity: 0.6;
+			}
+			input{
+				display: table-cell;
+				width: 230px;
+				height: 40px;
+				border-radius: 5px;
+				border: 1px solid rgb(192, 188, 188);
+				margin: 5px;
+				padding: 10px;
+			}
+			label{
+				display: table-cell;
+				font-size: 17px;
+				font-weight: bold;
+			}
+			.agenda{
+				background-color: rgb(255, 255, 255);
+				width: 100%;
+				height: 35%;
+				margin-bottom: 20px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				border-radius: 10px;
+				padding: 18px;
+				font-size: 18px;
+			}
+			.btn-delete{
+				border-radius: 5px;
+				color: white;
+				box-shadow: 1px 1px 1px rgb(192, 188, 188);
+				background-color: rgb(255, 0, 0);
+				font-size: 17px;
+				width: 80px;
+				height: 35px;
+			}
+			.btn-delete:hover{
+				opacity: 0.6;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="info">
+			<h1>Agenda</h1>
+			<h3>Insira uma data</h3>
+			<p>Enviaremos um email para te notificar</p>
+			</div>
+		<br>
+		<div class="formul">
+			<h2>Agende seu Compromisso:</h2>
+			<br>
+		<form action="/" method="post">
+			<label for="assunto">Assunto</label>
+			<input type="text" name="assunto" id="assunto" placeholder="assunto" required size="30">
+			<br>
+			<label for="email">Email</label>
+			<input type="email" name="email" id="email" placeholder="email" required size="30">
+			<br>
+			<label for="date">Data</label>
+			<input type="date" name="date" id="date" placeholder="data" required size="30">
+			<br>
+			<br>
+			<button type="submit" class="btn-submit">Agendar</button>
+		</form>
+		</div>
+		{{#each agendas}}
+			<div class="agenda">
+			<h4>Assunto: {{assunto}}</h4>
+			<br>
+			<h5>Email: {{email}}</h5>
+			<br>
+			<h6>Data: {{date}}</h6>
+			<br>
+			<form action="/deletar/{{_id}}" method="post">
+			<button class="btn-delete">Deletar</button>
+			</form>
+			</div>
+		{{else}}
+
+		{{/each}}
+		</div>
+	</html>
+</body>
+</html>
+
+
+
+
+
+

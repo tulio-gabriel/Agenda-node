@@ -1,0 +1,25 @@
+{
+  "name": "nodebasico",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "connect-flash": "^0.1.1",
+    "cron": "^4.1.0",
+    "crypto": "^1.0.1",
+    "express": "^4.21.2",
+    "express-handlebars": "^8.0.1",
+    "express-session": "^1.18.1",
+    "flash": "^1.1.0",
+    "handlebars": "^4.7.8",
+    "mongoose": "^8.12.1",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^6.10.0"
+  }
+}
