@@ -16,6 +16,7 @@ import flash from 'connect-flash';
 const adminEmail="emailModel@gmail.com"
 const adminPass="EmailPass"
 const app = express();
+const port = process.env.PORT || 3000
 //config
 //sessao
 app.use(session({
@@ -163,6 +164,6 @@ mongoose.connect("mongodb://localhost/agenda")
   })
   .catch((error) => console.log("Could not connect to mongo db " + error));
 
-app.listen(3000, () => {
+app.listen(port, () => {
 	  console.log('listening on port 3000!');
 });
